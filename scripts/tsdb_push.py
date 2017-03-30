@@ -16,5 +16,7 @@ try :
     metrics.send("sample.test",1,host="my-host")
     print "sample.test 1 host=my-host"
     metrics.wait()
+    time.sleep(1)
 except:
     pass
+    time.sleep(5)
