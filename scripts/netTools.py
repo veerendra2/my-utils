@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+'''
+Author: Veerendra.K
+Description: Simple "Domain Tools" like tools, displays specified host info & your public IP inof
+'''
 import json
 import urllib2
 import argparse
