@@ -1,5 +1,5 @@
 # Some usefull python scripts and snippets
-1. [changer init script](https://github.com/veerendra2/python-scripts/blob/master/scripts/changer)
+1.  [changer init script](https://github.com/veerendra2/python-scripts/blob/master/scripts/changer)
 
     It is an `init` script which changes the MAC address of `wlan0` interface. As I said `init` script, it will run at the time of        system boot and changes the MAC address i.e there is will be new MAC whenever system boots. With simple commands we can restore/change the MAC whenever we want. Read [my blog post](https://networkhop.wordpress.com/2017/03/26/mac-address-scrambling-in-linux/) for more info and how to install
 ```
@@ -39,4 +39,22 @@
       -m          shows public IP
       -H HOST     shows domain info of the host
       -v          show program's version number and exit
+   
+   root@ultron:/# python netTools.py (I have used VPN)
+   +--------------------------------------------------------+
+   | Your Public IP  138.197.X.X                            |
+   | City            Toronto                                |
+   | Region          Ontario                                |
+   | Country         Canada                                 |
+   | Continent       North America                          |
+   | ISP Name        Digital Ocean                          |
+   | Org. Name       Digital Ocean                          |
+   | AS Number       AS394362                               |
+   | Net Speed       Corporate                              |
+   | User Type       hosting                                |
+   | Latitude        43.6555                                |
+   | Longitude       -79.3626                               |
+   | Time Zone       America/Toronto                        |
+   +--------------------------------------------------------+
+
    ```
