@@ -19,3 +19,24 @@
 4. [port_scanner.py script](https://github.com/veerendra2/python-scripts/blob/master/scripts/port_scanner.py)
 
     A simple "localhost" open port scanner script with `socket`
+
+5. [netTools.py script](https://github.com/veerendra2/python-scripts/blob/master/scripts/netTools.py)
+
+   A simeple "Domain Tools" like script which retrives location of the specified host and show where you are with "public ip".
+   
+   Uses free HTTP APIs 
+   * https://ipv4.ipleak.net/json/ (Gets Host info)
+   * http://whatismyip.akamai.com/ (Gets public IP)
+   
+```
+   root@ultron:/# python netTools.py -h
+   usage: netTools.py [-h] [-m] [-H HOST] [-v]
+
+   Net Tools
+
+   optional arguments:
+      -h, --help  show this help message and exit
+      -m          shows public IP
+      -H HOST     shows domain info of the host
+      -v          show program's version number and exit
+   ```
