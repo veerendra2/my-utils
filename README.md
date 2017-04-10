@@ -22,7 +22,7 @@
 
 5. [netTools.py script](https://github.com/veerendra2/python-scripts/blob/master/scripts/netTools.py)
 
-   A simeple "Domain Tools" like script which retrives location of the specified host and show where you are with "public ip".
+   A simeple "Domain Tools" like script which retrives location of the specified host and show where you are with "public ip". Below you see the usage, without arguments `python netTools.py` displays information of your ISP with your public IP and your location
    
    Uses free HTTP APIs 
    * https://ipv4.ipleak.net/json/ (Gets Host info)
