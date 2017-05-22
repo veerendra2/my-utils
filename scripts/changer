@@ -7,6 +7,7 @@
 # Default-Stop:      0 1 6
 # Description:       Changes MAC Address on boot
 ### END INIT INFO
+# Read more info at https://networkhop.wordpress.com/2017/03/26/mac-address-scrambling-in-linux/
 
 INTERFACE="wlan0"
 
