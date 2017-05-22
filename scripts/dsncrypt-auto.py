@@ -4,7 +4,7 @@ Author: Veerendra. Kakumanu
 Description: An automated DNSCrypt Proxy creator using 'dnscrypt-proxy'
 
 Required Packages: dnscrypt-proxy
-Motivation: Read https://www.dnsleaktest.com/what-is-a-dns-leak.html
+Motivation: Read https://www.opendns.com/about/innovations/dnscrypt/
 '''
 import csv
 import urllib
