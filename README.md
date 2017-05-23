@@ -9,7 +9,7 @@
 ```
 
 ## 2. [connections_viewer.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/connections_viewer.py)
-`netstat`/`ss` like tool, which displays the current connections statuses with `pid`. It reads info from `/proc/net/tcp`
+[`netstat`](http://manpages.ubuntu.com/manpages/trusty/man8/netstat.8.html)/[`ss`](http://manpages.ubuntu.com/manpages/trusty/en/man8/ss.8.html) like tool, which displays the current connections statuses with `pid`. Reads info from `/proc/net/tcp`
     
 ## 3. [logger.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/logger.py) 
 A simple "logger" snippet. Copy the code and call function `log_it` to log the events in log file
@@ -19,6 +19,7 @@ A simple "localhost" open port scanner script with `socket`
 
 ## 5. [netTools.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/netTools.py)
 A simple "Domain Tools" like script which retrives location of the specified host and show where you are with "public ip". Below you can see the usage, without arguments `python netTools.py` displays information of your ISP with your public IP and your location 
+   
    Uses free HTTP APIs 
    * http://ip-api.com/json/ (Gets Host info)
    * http://whatismyip.akamai.com/ (Gets public IP)
@@ -66,7 +67,20 @@ root@ultron:/opt/scripts# python netTools.py
     * Shows available  servers by downloading .csv file from offical repo. No need to specify manually
     * Daemonize the process
    
-   DNSCrypt run on localhost(127.0.0.1) port 53. After running the script(if everything is ok) please change the DNS IP in network settings like below
+   `DNSCrypt` runs on localhost(127.0.0.1) port 53. After running the script(if everything is ok) please change the DNS IP in network settings like below
    
    ![Network Setting](https://ibin.co/3NSgLh4fO5Yg.jpg)
    
+```
+***NOTE: If you run without arguments, it will display DNSCrypt servers to choose
+
+root@ultron:/opt/scripts# ./dnscrypt-auto.py -h
+usage: dnscrypt-auto.py [-h] [-H HOST] [-v]
+
+dnscrypt-auto
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -H HOST     Connect to this DNS server
+  -v          show program's version number and exit
+```
