@@ -9,6 +9,7 @@ import json
 import re
 import argparse
 
+wireless_file="/proc/net/wireless"
 re_compile_patterns1={"MAC Address" : 'Address:(.*)',
                     "Channel"       : 'Channel:(.*)',
                     "Frequency"     : 'Frequency:(.\S+ .\S+)',
@@ -25,7 +26,7 @@ re_compile_patterns2={"Encryption Algorithm WPA" : 'IE: WPA(.*)',
                     "Pairwise Ciphers"           : 'Pairwise Ciphers(.*)',
                     "Authentication Suites"      : 'Authentication Suites(.*)'}
 
-def get_ap_results():
+def get_ap_results(iface):
     result=None
     ap=dict()
     for x in range(3):
@@ -33,17 +34,27 @@ def get_ap_results():
             print "iwlist is not working?"
             exit(1)
         try:
-            return subprocess.check_output("iwlist wlan0 s",shell=True)
+            return subprocess.check_output("iwlist {} s".format(iface),shell=True)
             break
         except:
             continue
+
+def find_iface():
+    try:
+        with open(wireless_file) as f:
+            return re.findall(r'(.*):',f.read())[0].strip()
+    except:
+        while 1:
+            iface=raw_input("\nWireless interface not found.\nPlease enter wireless interface name> ").strip()
+            if iface:
+                return iface
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='Displays wifi hotspots info near to you. [Coded by VEERENDRA KAKUMANU]')
     parser.add_argument('-j', action='store_true', dest='json_val', default=False ,help='Dumps in json format')
     parser.add_argument('-v', action='version', version='%(prog)s 1.0')
     results=parser.parse_args()
-    ssids=get_ap_results()
+    ssids=get_ap_results(find_iface())
     for name,pattern in re_compile_patterns1.items():
         re_compile_patterns1[name]=re.compile(pattern)
     for names,pattern in re_compile_patterns2.items():
