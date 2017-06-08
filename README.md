@@ -84,3 +84,36 @@ optional arguments:
   -H HOST     Connect to this DNS server
   -v          show program's version number and exit
 ```
+## 6. [ssid_list.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/ssid_list.py)
+   Displays wifi hotspots near to you. Uses the command `iwlist`. Option `-j` will diplays json format with more info
+```
+root@android:/opt/scripts# python ssid_list.py -h
+usage: ssid_list.py [-h] [-j] [-v]
+
+Displays wifi hotspots info near to you. [Coded by VEERENDRA KAKUMANU]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -j          Dumps in json format
+  -v          show program's version number and exit
+```
+```
+root@android:/opt/scripts# python ssid_list.py 
++----+---------------------+-------------------+---------+-----------+--------------+
+| ID |        ESSID        |    MAC Address    | Channel | Frequency | Singal Level |
++----+---------------------+-------------------+---------+-----------+--------------+
+| 01 | Iron                | AA:AA:AA:47:9C:36 | 3       | 2.422 GHz | -51 dBm      |
+| 02 | DDDDD XXXXX         | AA:AA:AA:10:D8:10 | 1       | 2.412 GHz | -80 dBm      |
+| 03 | XXXXXXXXXXX         | AA:AA:20:7C:58:77 | 1       | 2.412 GHz | -78 dBm      |
+| 04 | YYY                 | AA:12:AA:00:61:32 | 1       | 2.412 GHz | -89 dBm      |
+| 05 | WWWWWWW             | AA:AA:AA:CF:0B:45 | 2       | 2.417 GHz | -85 dBm      |
+| 06 | XXXXXX              | 66:AA:AA:30:AA:86 | 5       | 2.432 GHz | -86 dBm      |
+| 07 | Wolverine           | 98:FC:11:AA:44:F2 | 6       | 2.437 GHz | -88 dBm      |
+| 08 | NNNN                | 0C:AA:B5:AA:B7:D4 | 9       | 2.452 GHz | -76 dBm      |
+| 09 | TTTTTT              | 6C:AA:AA:FC:AA:1B | 11      | 2.462 GHz | -85 dBm      |
+| 10 | AAAAAAAAAAAA        | 48:AA:33:AA:D2:95 | 11      | 2.462 GHz | -87 dBm      |
+| 11 | GGGGGGGGG           | DC:EF:AA:12:AA:5C | 13      | 2.472 GHz | -84 dBm      |
+| 12 | EEEEEE              | AA:3A:AA:1B:9E:30 | 10      | 2.457 GHz | -86 dBm      |
+| 13 | RRRRRR              | 1C:AA:2B:61:AA:A7 | 13      | 2.472 GHz | -85 dBm      |
++----+---------------------+-------------------+---------+-----------+--------------+
+```
