@@ -10,14 +10,11 @@
 
 ## 2. [connections_viewer.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/connections_viewer.py)
 [`netstat`](http://manpages.ubuntu.com/manpages/trusty/man8/netstat.8.html)/[`ss`](http://manpages.ubuntu.com/manpages/trusty/en/man8/ss.8.html) like tool, which displays the current connections statuses with `pid`. Reads info from `/proc/net/tcp`
-    
-## 3. [logger.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/logger.py) 
-A simple "logger" snippet. Copy the code and call function `log_it` to log the events in log file
-
-## 4. [port_scanner.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/port_scanner.py)
+   
+## 3. [port_scanner.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/port_scanner.py)
 A simple "localhost" open port scanner script with `socket`
 
-## 5. [netTools.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/netTools.py)
+## 4. [netTools.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/netTools.py)
 A simple "Domain Tools" like script which retrives location of the specified host and show where you are with "public ip". Below you can see the usage, without arguments `python netTools.py` displays information of your ISP with your public IP and your location 
    
    Uses free HTTP APIs 
