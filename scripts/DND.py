@@ -2,7 +2,7 @@
 '''
 Author: Veerendra Kakumanu
 Description: Simple Do Not Distrube(DND) script, tempararly blocks the specified site in localhost.
-NOTE: After running the dnd.py, restart broswer to get chages
+NOTE: Restart broswer to get chages
 '''
 import os
 import argparse
@@ -30,6 +30,8 @@ def dndON():
             if site not in content:
                 f.write("127.0.0.1\t{}\n".format(site))
                 f.write("::1\t{}\n".format(site))
+    print "Please restart the browser to see the effect"
+    
 def dndOFF():
     final_content=list()
     with open(host_file,"a+") as f:
@@ -42,7 +44,8 @@ def dndOFF():
         f.seek(0)
         f.truncate()
         f.writelines(final_content)
-
+    print "Please restart the browser to see the effect"
+        
 if __name__=='__main__':
     if not os.geteuid()==0:
         print "Please run the script as sudo"
