@@ -30,7 +30,7 @@ def dndON():
             if site not in content:
                 f.write("127.0.0.1\t{}\n".format(site))
                 f.write("::1\t{}\n".format(site))
-    print "Please restart the browser to see the effect"
+    print "DND [ON] *Please restart the browser to see the effect"
     
 def dndOFF():
     final_content=list()
@@ -44,7 +44,7 @@ def dndOFF():
         f.seek(0)
         f.truncate()
         f.writelines(final_content)
-    print "Please restart the browser to see the effect"
+    print "DND [ON] *Please restart the browser to see the effect"
         
 if __name__=='__main__':
     if not os.geteuid()==0:
