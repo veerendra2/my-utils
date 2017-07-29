@@ -12,11 +12,12 @@ def send_notification(title, body, channel=False):
     import random
     personal_greetings = ["Sir, ", "Boss, ", "Mr. Veerendra, "]
     crowed_greetings = ["Ok People", "Hello there"]
-    api_key = "o.Wp7IYNaO0ftCGRNplyAA5juwRQKGLQ7aZVXy0"  # Fake API KEY
+    api_key = "o.Wp7IYNaO0ftCGRNplyAA5juwRQKGLQ7a"
     push_api = "https://api.pushbullet.com/v2/pushes"
-    my_device_id = "ujv5wTYow0asjAw1gGLQ7a"  # Fake Device ID
+    my_device_id = "ujv5wTYow0asjAw1gZVXy0"
+    body = body + "\n\nThanks\nYour Bot"
     if channel:
-        title = random.choice(crowed_greetings) + "It is regarding " + title
+        title = random.choice(crowed_greetings) + "It is regarding " + title + "\nThanks\nYour Bot"
         data = {"type": "note", "title": title,
                 "body": body, "channel_tag": "omega"}
     else:
@@ -28,7 +29,4 @@ def send_notification(title, body, channel=False):
     print res
 
 if __name__ == "__main__":
-    '''
-    Do any long running task...and send notification about that task
-    '''
-    send_notification("Test", "This is test message!")
+    send_notification("Test", "This is test message! haha")
