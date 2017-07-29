@@ -114,3 +114,39 @@ root@android:/opt/scripts# python ssid_list.py
 | 13 | RRRRRR              | 1C:AA:2B:61:AA:A7 | 13      | 2.472 GHz | -85 dBm      |
 +----+---------------------+-------------------+---------+-----------+--------------+
 ```
+## 7. [pastebin.py](https://goo.gl/g4NGwD)
+   A simple `pastebin` tool, send data to [pastebin.com](https://pastebin.com/) and retrieves ternding pastes.
+   
+   Usefull when we need to capture huge logs or some output from command. Just have to pipe the output to the script `cat apache.logs | pastebin`
+```
+root@shadows:/opt# python pastebin.py -h
+usage: pastebin.py [-h] [-t] [-p] [-f PFORMAT] [-n PNAME]
+
+Sends data to pastebin.com
+[*]PIPE the ouput to the script.                                
+Example: echo 'Test' | python pastebin.py
+
+optional arguments:
+  -h, --help  show this help message and exit
+  -t          Gets trending paste
+  -p          Public Paste
+  -f PFORMAT  Format of the text(Optional). Please refer formats https://pastebin.com/api#5
+  -n PNAME    Name of the past(Optional)
+```
+   #### How to run the script from any where?
+   1. Get the script 
+   
+      `wget -qO pastebin https://goo.gl/g4NGwD`
+   2. Give executable permissions
+   
+      `chmod +x pastebin`
+   3. Copy the script to `/usr/local/bin` directory
+   
+      `cp pastebin /usr/local/bin`
+   
+  If every thing is ok, it will shows the pastebin url like below
+   ```
+   root@shadows:~# echo "Huge output from logs that we need to share." | pastebin -n "pastebin-tool-test"
+   https://pastebin.com/UB8M6GBb
+   ```
+   
