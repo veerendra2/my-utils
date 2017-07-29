@@ -1,4 +1,4 @@
-#!/usr/env python
+#!/usr/bin/env python
 '''
 Author : Veerendra Kakumanu
 Description : Sends "pushbullet" notification to Device / Channel
