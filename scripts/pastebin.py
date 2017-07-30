@@ -13,7 +13,7 @@ import sys
 import os
 
 API_URL = "https://pastebin.com/api/api_post.php"
-API_KEY = "1314f05cba49c04edc6e32e69d9fe28d"
+API_KEY = "cf4b23ac9420f095e539789bc5b2185e"
 
 if not API_KEY:
     print "[!] Missing API key. Get API key from your account(https://pastebin.com/api#1) and specify in code"
