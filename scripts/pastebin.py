@@ -11,7 +11,9 @@ import time
 import xml.etree.ElementTree as ET
 import sys
 import os
+import warnings
 
+warnings.filterwarnings("ignore")
 API_URL = "https://pastebin.com/api/api_post.php"
 API_KEY = "cf4b23ac9420f095e539789bc5b2185e"
 
@@ -30,24 +32,24 @@ def create_paste(text, visiblity, pformat=None, pname=None):
         payload.setdefault("api_paste_format", pformat)
     try:
         response = requests.post(API_URL, data=payload)
+        print response.text
     except:
         print "[!] Something went wrong! Please try again"
         exit(1)
-    print response.text
 
 
 def list_trending_paste():
     payload = {"api_dev_key": API_KEY, "api_option": "trends"}
     try:
         response = requests.post(API_URL, payload)
+        xml_data = "<list>" + response.text.encode("utf-8") + "</list>"
+        tree = ET.ElementTree(ET.fromstring(xml_data))
+        print "********** TRENDING PASTEBIN **********"
+        for items in tree.getroot():
+            print items[8].text.ljust(35, " "),items[2].text
     except:
         print "[!] Something went wrong! Please try again"
         exit(1)
-    xml_data = "<list>" + response.text.encode("utf-8") + "</list>"
-    tree = ET.ElementTree(ET.fromstring(xml_data))
-    print "********** TRENDING PASTEBIN **********"
-    for items in tree.getroot():
-        print items[8].text.ljust(35, " "),items[2].text
 
 
 if __name__ == "__main__":
