@@ -12,21 +12,22 @@ import time
 import json
 
 hostname=os.uname()[1]
-url="https://localhost:8443/api/put"
+url="http://localhost:4343/api/put"
 headers = {'content-type': 'application/json'}
 
-time=int(time.time())
-
 data={
-    "metric": "cpu.util",
-    "timestamp": time,
+    "metric": "test.cpu.util",
+    "timestamp": now,
     "value": 18, # <-- Get the CPU here
     "tags": {
        "host": hostname
     }
 }
-
-json_data=json.dumps(data)
-print json_data
-response = requests.post(url, data=json_data,headers=headers, verify=False)
-print response
+while 1:
+	data["value"] += 1
+	data["timestamp"] = int(time.time())
+	json_data=json.dumps(data)
+	print json_data
+	response = requests.post(url, data=json_data,headers=headers, verify=False)
+	print response
+	time.sleep(2)
