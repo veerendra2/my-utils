@@ -149,4 +149,14 @@ optional arguments:
    root@shadows:~# echo "Huge output from logs that we need to share." | pastebin -n "pastebin-tool-test"
    https://pastebin.com/UB8M6GBb
    ```
-   
+
+## 8.[wipedisk.sh](https://raw.githubusercontent.com/veerendra2/useless-scripts/master/scripts/wipedisk.sh)
+   A simple shell script that fills zeros in empty space. Please refer [stackoverflow](https://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux) question for more info
+   ```
+   ./wipedisk.sh fast shutdown  # Fast wipe and shutdowns
+   ./wipedisk.sh fast reboot  # Fast wipe and restart
+   ```
+   * Avaiable wipes (Arguments)
+     * `fast`
+     * `med`
+     * `slow`
