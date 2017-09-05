@@ -1,5 +1,7 @@
 # Some usefull python scripts and snippets
 
+#### Repo Website - https://veerendra2.github.io/useless-scripts/
+
 ## 1. [changer init script](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/changer)
    It is an `init` script which changes the MAC address of `wlan0` interface. As I said `init` script, it will run at the time of system boot and changes the MAC address i.e there is will be new MAC whenever system boots. With simple commands we can restore/change the MAC whenever we want. Read [my blog post](https://networkhop.wordpress.com/2017/03/26/mac-address-scrambling-in-linux/) for more info and how to install
 ```
