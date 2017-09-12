@@ -55,7 +55,7 @@ root@ultron:/opt/scripts# python netTools.py
 
    ```
 ## 5. [dsncrypt-auto.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/dsncrypt-auto.py)
-   Uses `dnscrypt-proxy` tool to setup DSNCrypt in machine.
+   Uses `dnscrypt-proxy` tool to setup DSNCrypt in machine. Check installation steps [here](http://www.webupd8.org/2014/08/encrypt-dns-traffic-in-ubuntu-with.html)
    
    * #### What is [DNSCrypt](https://dnscrypt.org/) and Why?
 
@@ -65,24 +65,34 @@ root@ultron:/opt/scripts# python netTools.py
 
     * Shows available  servers by downloading .csv file from offical repo. No need to specify manually
     * Daemonize the process
-   
-   `DNSCrypt` runs on localhost(127.0.0.1) port 53. After running the script(if everything is ok) please change the DNS IP in network settings like below
-   
-   ![Network Setting](https://ibin.co/3NSgLh4fO5Yg.jpg)
-   
 ```
-***NOTE: If you run without arguments, it will display DNSCrypt servers to choose
+###NOTE: If you run without arguments, it will display DNSCrypt servers to choose
 
-root@ultron:/opt/scripts# ./dnscrypt-auto.py -h
-usage: dnscrypt-auto.py [-h] [-H HOST] [-v]
+root@ultron:/# python dnscrypt.py -h
+usage: dnscrypt.py [-h] [-H HOST] [-d] [-v]
 
-dnscrypt-auto
+dnscrypt
 
 optional arguments:
   -h, --help  show this help message and exit
   -H HOST     Connect to this DNS server
+  -d          Download DNS server list(/opt/dnscrypt-resolvers.csv) and
+              display
   -v          show program's version number and exit
 ```
+   * ### [encryptdns](https://raw.githubusercontent.com/veerendra2/useless-scripts/master/scripts/encryptdns)
+     * An `init` script runs `dnscrypt-proxy` on startup
+     * Specify `csv_file` location and `resolver_name` in the script. (You get this info from `python dsncrypt.py -d`)
+     ```
+     sudo wget -O /etc/init.d/encryptdns https://goo.gl/opZ78J
+     sudo chmod +x /etc/init.d/encryptdns
+     sudo update-rc.d encryptdns defaults
+     ```
+   `DNSCrypt` runs on localhost(127.0.0.1) port 53. After running the script(if everything is ok) please change the DNS IP in network settings like below
+   
+   ![Network Setting](https://ibin.co/3a9HBNJosot1.jpg)
+   
+
 ## 6. [ssid_list.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/ssid_list.py)
    Displays wifi hotspots near to you. Uses the command `iwlist`. Option `-j` will diplays json format with more info
 ```
