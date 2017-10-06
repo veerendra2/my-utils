@@ -127,7 +127,7 @@ root@android:/opt/scripts# python ssid_list.py
 +----+---------------------+-------------------+---------+-----------+--------------+
 ```
 ## 7. [pastebin.py](https://goo.gl/g4NGwD)
-   A simple `pastebin` tool, send data to [pastebin.com](https://pastebin.com/) and retrieves ternding pastes.
+   A simple `pastebin` tool, sends data to [pastebin.com](https://pastebin.com/) and retrieves ternding pastes.
    
    Usefull when we need to capture huge logs or some output from command. Just have to pipe the output to the script `cat apache.logs | pastebin`
 ```
