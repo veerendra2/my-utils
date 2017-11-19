@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 '''
 Author : Veerendra Kakumanu
 Description : Sends data to pastebin.com
