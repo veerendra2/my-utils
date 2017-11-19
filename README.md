@@ -172,3 +172,26 @@ optional arguments:
      * `fast`
      * `med`
      * `slow`
+
+## 9.[httpserver](https://raw.githubusercontent.com/veerendra2/useless-scripts/master/scripts/httpserver.py)
+   Simple HTTP server. You can share your directory in LAN
+   
+   Download: `wget -qO httpserver.py https://goo.gl/fTHcxR && python httpserver.py`
+   ```
+   veeru@ultron:~/$ python httpserver.py -h
+   usage: httpserver.py [-h] [-H HOST] [-p PORT] [-d WEB_DIR]
+
+   Simple HTTP Server
+
+   optional arguments:
+     -h, --help  show this help message and exit
+     -H HOST     Host IP. Default: 0.0.0.0
+     -p PORT     Port. Default: 8001
+     -d WEB_DIR  Web Directory. Default: pwd
+   ```
+   * Run the script from anywhere
+   ```
+   wget -qO httpserver https://goo.gl/fTHcxR
+   sudo chmod +x httpserver
+   mv httpserver /usr/local/bin/
+   ```
