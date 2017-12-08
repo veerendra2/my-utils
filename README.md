@@ -94,7 +94,7 @@ optional arguments:
    
 
 ## 6. [ssid_list.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/ssid_list.py)
-   Displays wifi hotspots near to you. Uses the command `iwlist`. Option `-j` will diplays json format with more info
+   Displays wifi hotspots near to you. Uses the command `iwlist`. Option `-j` will diplays json format with more info. Similar command `nmcli d wifi list`
 ```
 root@android:/opt/scripts# python ssid_list.py -h
 usage: ssid_list.py [-h] [-j] [-v]
