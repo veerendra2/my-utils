@@ -43,7 +43,7 @@ def check_dnscrypt():
     ret_status=os.system("dpkg -l dnscrypt-proxy > /dev/null 2>&1")
     if ret_status!=0:
         print Colors.WARNING+"'dnscrypt-proxy' not found.Installing...\n"+Colors.ENDC
-        r=os.system("sudo apt-get update && apt-get install dnscrypt-proxy -y")
+        r=os.system("sudo add-apt-repository ppa:anton+/dnscrypt -y && sudo apt-get update && apt-get install dnscrypt-proxy -y")
         if r!=0:
             print Colors.FAIL+"Unable to install dnscrypt-proxy. Please install it manully"+Colors.ENDC
             exit(2)
