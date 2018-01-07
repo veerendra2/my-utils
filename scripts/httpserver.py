@@ -7,8 +7,18 @@ from SimpleHTTPServer import SimpleHTTPRequestHandler
 import BaseHTTPServer
 import argparse
 import os
+import subprocess
 
 PROTOCOL = "HTTP/1.0"
+
+def get_interface_ip():
+    try:
+        primary_iface = subprocess.check_output("route | grep '^default' | grep -o '[^ ]*$'", shell=True).strip()
+        ip = subprocess.check_output("ip a | grep {} | grep inet | awk {{'print $2'}} | cut -d / -f1".
+                                     format(primary_iface), shell=True).strip()
+        return ip
+    except:
+        return None
 
 
 def start_server(host, port, dir):
@@ -17,6 +27,9 @@ def start_server(host, port, dir):
     httpd = BaseHTTPServer.HTTPServer(server_address, SimpleHTTPRequestHandler)
     sa = httpd.socket.getsockname()
     print "[*] Serving HTTP on {}:{}. Web Directory {}".format(sa[0], sa[1], dir)
+    ip = get_interface_ip()
+    if ip:
+        print "[*] Access -> http://{}:{}".format(ip, port)
     httpd.serve_forever()
 
 
