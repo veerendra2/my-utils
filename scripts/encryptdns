@@ -36,7 +36,7 @@ case "$1" in
         echo "$name already running"
     else
         echo "Starting $name"
-        sudo dnscrypt-proxy -R $resolver_name -L $csv_file -l $log -p $pid_file -d > /dev/null 2>&1
+        sudo dnscrypt-proxy -R $resolver_name -L $csv_file -p $pid_file -d > /dev/null 2>&1
         if ! is_running; then
             echo "Unable to start, see $log"
             exit 1
