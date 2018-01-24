@@ -54,7 +54,7 @@ root@ultron:/opt/scripts# python netTools.py
 +----------------------------------------------------------+
 
    ```
-## 5. [dsncrypt-auto.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/dsncrypt-auto.py)
+## 5. [dsncrypt.py](https://github.com/veerendra2/useless-scripts/blob/master/scripts/dnscrypt.py)
    Uses `dnscrypt-proxy` tool to setup DSNCrypt in machine. Check installation steps [here](http://www.webupd8.org/2014/08/encrypt-dns-traffic-in-ubuntu-with.html)
    
    * #### What is [DNSCrypt](https://dnscrypt.org/) and Why?
