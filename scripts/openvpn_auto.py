@@ -88,8 +88,9 @@ def kill():
 def checks():
     return_code1 = execute("dpkg --get-selections | grep openvpn", False)
     return_code2 = execute("dpkg --get-selections | grep network-manager-openvpn-gnome", False)
-    if return_code1 == 1 or return_code2 == 1:
-        print "[!] Please install openvpn, network-manager-openvpn-gnome and resolvconf"
+    return_code3 = execute("dpkg --get-selections | grep network-manager-openvpn", False)
+    if return_code1 == 1 or return_code2 == 1 or return_code3:
+        print "[!] Please install openvpn, network-manager-openvpn-gnome, network-manager-openvpn-gnome and resolvconf"
         exit(1)
     if not os.path.exists(OVPN_DIRECTORY) or not os.path.exists(AUTH_FILE_LOCATION):
         print "[!] Please make sure .ovpn config files directory and credentials file location exists!"
