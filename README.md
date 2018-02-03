@@ -1,9 +1,10 @@
 # Some usefull python scripts and snippets
 
 #### Repo Website - https://veerendra2.github.io/useless-scripts/
-
+#### My Website - https://veerendra2.github.io/
+Downoload some of the below scripts: `wget -qO downloader.sh https://goo.gl/m8yBZ4 && sudo bash downloader.sh`
 ## 1. [changer init script](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/changer)
-   It is an `init` script which changes the MAC address of `wlan0` interface. As I said `init` script, it will run at the time of system boot and changes the MAC address i.e there is will be new MAC whenever system boots. With simple commands we can restore/change the MAC whenever we want. Read [my blog post](https://networkhop.wordpress.com/2017/03/26/mac-address-scrambling-in-linux/) for more info and how to install
+   It is an `init` script which changes the MAC address of `wlan0` interface. As I said `init` script, it will run at the time of system boot and changes the MAC address i.e there is will be new MAC whenever system boots. With simple commands we can restore/change the MAC whenever we want. Read [my blog post](https://veerendra2.github.io/mac-scrambling/) for more info and how to install
 ```
   service changer restore (Restores original MAC)
   service changer new (Asigns new MAC)
@@ -92,6 +93,7 @@ optional arguments:
    
    ![Network Setting](https://ibin.co/3a9HBNJosot1.jpg)
    
+   * Read my blog post for more info - https://veerendra2.github.io/dns-encrypt/
 
 ## 6. [ssid_list.py](https://raw.githubusercontent.com/veerendra2/scripts/master/scripts/ssid_list.py)
    Displays wifi hotspots near to you. Uses the command `iwlist`. Option `-j` will diplays json format with more info. Similar command `nmcli d wifi list`
@@ -193,5 +195,35 @@ optional arguments:
    ```
    wget -qO httpserver https://goo.gl/fTHcxR
    sudo chmod +x httpserver
-   mv httpserver /usr/local/bin/
+   sudo mv httpserver /usr/local/bin/
+   ```
+## 10.[openvpn_auto](https://raw.githubusercontent.com/veerendra2/useless-scripts/master/scripts/openvpn_auto.py)
+   An automated script to setup VPN with `openvpn`. Usefull when setting up VPN with `.ovpn` config file(For example Tunnel Bear, ProtonVPN). 
+   * After you donwload, change [`OVPN_DIRECTORY`](https://github.com/veerendra2/useless-scripts/blob/master/scripts/openvpn_auto.py#L10) location in script  which contains `.ovpn` files.
+   * Create `auth.txt` and specify location at [`AUTH_FILE_LOCATION`](https://github.com/veerendra2/useless-scripts/blob/master/scripts/openvpn_auto.py#L11)
+     
+     The `auth.txt` should like below
+     ```
+      openvpn_username
+      openvpn_passsword
+     ```
+   ##### Required Packages
+   * `sudo apt-get install openvpn network-manager-openvpn-gnome network-manager-openvpn-gnome resolvconf`
+   ##### Help
+   ```
+   $ python openvpn_auto.py -h
+   usage: openvpn_auto.py [-h] [-k] [-c]
+
+   A simple automated script to septup VPN with openvpn [Coded by @veerendra2]
+
+   optional arguments:
+      -h, --help  show this help message and exit
+      -k          Graceful killing of openvpn process
+      -c          Check openvpn is running
+   ```
+   * Run from anywhere
+   ```
+   wget -qO httpserver https://goo.gl/16wChr
+   sudo chmod +x openvpn_auto
+   sudo mv openvpn_auto /usr/local/bin/
    ```
