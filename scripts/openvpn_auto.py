@@ -7,8 +7,6 @@ import subprocess
 import os
 import argparse
 
-OVPN_DIRECTORY = "/opt/ProtonVPN"
-AUTH_FILE_LOCATION = "/opt/ProtonVPN/auth.txt"
 PID_FILE = "/var/run/openvpn.pid"
 LOG_FILE = "/var/log/openvpn.log"
 OPENVPN_CMD = "sudo openvpn --config {} --auth-user-pass {} --daemon --log-append {} --writepid {}"
@@ -34,11 +32,15 @@ def execute(cmd, verbose=True):
 def menu():
     config_files = dict()
     id = 0
-    for files in os.listdir(OVPN_DIRECTORY):
-        if files.endswith(".ovpn"):
-            id = id + 1
-            config_files.setdefault(id, files)
-            print str(id).ljust(3, " ")+files
+    try:
+        for files in os.listdir(OVPN_DIRECTORY):
+            if files.endswith(".ovpn"):
+                id = id + 1
+                config_files.setdefault(id, files)
+                print str(id).ljust(3, " ")+files
+    except OSError:
+        print "[!] Please specify .ovpn files directory and authentication text file location. Help -> sudo python openvpn_auto.py -h"
+        exit(1)
     if id == 0:
         print "[!] .ovpn files not found in the location {}".format(OVPN_DIRECTORY)
         exit(1)
@@ -92,16 +94,26 @@ def checks():
     if return_code1 == 1 or return_code2 == 1 or return_code3:
         print "[!] Please install openvpn, network-manager-openvpn-gnome, network-manager-openvpn-gnome and resolvconf"
         exit(1)
-    if not os.path.exists(OVPN_DIRECTORY) or not os.path.exists(AUTH_FILE_LOCATION):
-        print "[!] Please make sure .ovpn config files directory and credentials file location exists!"
-        exit(1)
 
 
 if __name__ == '__main__':
-    arg = argparse.ArgumentParser(description="A simple automated script to septup VPN with openvpn [Coded by @veerendra2]")
+    OVPN_DIRECTORY = ""
+    AUTH_FILE_LOCATION = ""
+    arg = argparse.ArgumentParser(description="A simple automated script to septup VPN with openvpn \
+                                                [Coded by @veerendra2]")
     arg.add_argument("-k", action="store_true", dest="kill", default=False, help="Graceful killing of openvpn process")
-    arg.add_argument("-c", action="store_true",  dest="check", default=False, help="Check openvpn is running")
+    arg.add_argument("-c", action="store_true",  dest="check", default=False, help="Check openvpn is running or not")
+    arg.add_argument("-d", action="store", dest="directory", default=False, help=".ovpn files directory")
+    arg.add_argument("-a", action="store", dest="auth_file", default=False, help="OpenVPN authentication txt file \
+                                                                                        location")
     options = arg.parse_args()
+    if options.directory and options.auth_file:
+        if os.path.exists(options.directory) and os.path.exists(options.auth_file):
+            OVPN_DIRECTORY = options.directory
+            AUTH_FILE_LOCATION = options.auth_file
+        else:
+            print "[!] Please verify path for .ovpn files directory AND authentication text file locations"
+            exit(1)
     if options.check:
         check_process(True)
         exit(0)
