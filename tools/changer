@@ -17,7 +17,7 @@ change_mac()
   sudo ip link set $INTERFACE down
   sudo macchanger -A $INTERFACE >> /dev/null 2>&1
   sudo ip link set $INTERFACE up
-  service network-manager restart >> /dev/null 2>&1
+  sudo service network-manager restart >> /dev/null 2>&1
   new_mac=`cat /sys/class/net/$INTERFACE/address`
   if [ "\$curr_mac" != "\$new_mac" ]
   then
@@ -32,10 +32,10 @@ change_mac()
 restore_mac()
 {
   sudo ip link set $INTERFACE down
-  macchanger -p $INTERFACE >> /dev/null 2>&1
+  sudo macchanger -p $INTERFACE >> /dev/null 2>&1
   echo "MAC Address Restored "`cat /sys/class/net/$INTERFACE/address`
   sudo ip link set $INTERFACE up
-  service network-manager restart >> /dev/null 2>&1
+  sudo service network-manager restart >> /dev/null 2>&1
   exit 0
 }
 

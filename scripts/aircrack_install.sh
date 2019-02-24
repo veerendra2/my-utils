@@ -1,4 +1,7 @@
 #!/bin/bash
+# Author: Veerendra Kakumanu
+# Description: Installs Nvidia drivers, hashcat and aircrack-ng tool
+
 sudo apt-update
 echo "[+] Installing Nvidia Drivers"
 sudo apt-get install nvidia-cuda-* -y
