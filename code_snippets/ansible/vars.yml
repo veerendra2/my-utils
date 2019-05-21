@@ -1,0 +1,6 @@
+# A dummy vars file
+
+user_password: 'superpassoword'
+hostname: 'ghost'
+dns_ip: '1.1.1.1'
+

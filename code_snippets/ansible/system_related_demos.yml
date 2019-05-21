@@ -1,0 +1,48 @@
+- name: System Related Tasks Demos
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars:
+    - ansible_sudo_pass: mysudopas
+    - password: mypassoword
+
+  tasks:
+
+  - name: Creating 'john' user
+    user:
+      name: stack
+      password: "{{ password | password_hash('sha512') }}"
+
+  - name: Disable password requirements for the 'john' user when using sudo
+    lineinfile:
+      dest: /etc/sudoers.d/john
+      state: present
+      create: yes
+      line: 'john ALL=(root) NOPASSWD:ALL'
+      validate: 'visudo -cf %s'
+      mode: 0440
+
+  - name: Look for 2 users logged in. Poll 6 Times with delay of 10 seconds (6*10=60 sec)
+    shell: w -h | wc -l
+    register: cmd_out
+    until: cmd_out.stdout == 2
+    ignore_errors: yes
+    retries: 6
+    delay: 10
+
+  - name: Fecthing sshd Service Status
+    shell: systemctl list-unit-files | egrep 'sshd'
+    register: cmd_out1
+    ignore_errors: true
+
+  - name: Perform below tasks if sshd is not running
+    block:
+      - name: Perform Some Other tasks before restart of SSH
+        debug: msg="Performing other tasks"
+
+      - name: Start sshd
+        service:
+          name: sshd
+          state: started
+    when: cmd_out1.stdout != ""

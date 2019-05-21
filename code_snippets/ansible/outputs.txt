@@ -1,0 +1,16 @@
+TASK [Get the sub elements from JSON Array] *******************************************************************************************
+ok: [localhost] => (item=[{u'others': u'Other Values'}, {u'picture': u'http://placehold.it/32x32', u'guid': u'ca6d9b22-a167-4d3f-aaa2-5975023d2738', u'name': u'Shepherd Tyson', u'index': 0, u'gender': u'male', u'company': u'ENTHAZE', u'age': 33, u'eyeColor': u'brown', u'phone': u'+1 (964) 424-3850', u'balance': u'$2,019.91', u'email': u'shepherdtyson@enthaze.com', u'isActive': False}]) => {
+    "msg": "33"
+}
+ok: [localhost] => (item=[{u'others': u'Other Values'}, {u'picture': u'http://placehold.it/32x32', u'guid': u'b7ecfce5-1df5-4e0c-a12a-69565e52f016', u'name': u'Frank Kirk', u'index': 1, u'gender': u'male', u'company': u'TECHMANIA', u'age': 23, u'eyeColor': u'blue', u'phone': u'+1 (893) 486-3665', u'balance': u'$1,356.16', u'email': u'frankkirk@techmania.com', u'isActive': False}]) => {
+    "msg": "23"
+}
+
+
+TASK [Get the sub elements from JSON Array] *******************************************************************************************
+ok: [localhost] => (item=Shepherd Tyson) => {
+    "msg": "33"
+}
+ok: [localhost] => (item=Frank Kirk) => {
+    "msg": "23"
+}

@@ -1,0 +1,51 @@
+---
+- name: Set/Get on Files
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars_files:
+    dummy_vars.yml
+  vars:
+    muti_items: "{{ [] }}"
+    files_list:
+      - files/json_file1.json
+      - files/json_file2.json
+
+  tasks:
+  - name: Loading Json File
+    set_fact:
+      json_content: lookup('file', json_file1.json) | from_json
+
+  - name: Displaying
+    debug: msg={{ item }}
+    with_items: "{{ json_content }}"
+
+  - name: Loading Multiple Files
+    set_fact:
+      muti_items: "{{ muti_items + lookup('file', item) | from_json }}"
+    with_items: "{{ files_list }}"
+
+  - name: Getting Values
+    debug: msg={{ item.others }}
+    with_items: "{{ muti_items }}"
+
+  - name: Get innodb_additional_mem_pool_size from ini File
+    debug: msg="{{ lookup('ini', 'innodb_additional_mem_pool_size section=default file=./files/ini_file.ini') }}"
+
+  - name: Setting max_concurrent_builds in ini File
+    ini_file:
+      dest: ./files/ini_file.ini
+      section: nova
+      option: max_concurrent_builds
+      value: 100
+
+  - name: Adding DNS IP with linefile
+    lineinfile:
+      path: /etc/sysconfig/network-scripts/ifcfg-eno2
+      state: present
+      regexp: '^DNS1='
+      line: 'DNS1="{{ dns_ip }}"'
+
+
+

@@ -1,0 +1,40 @@
+[
+  {
+    "_id": [
+      {
+        "index": 0,
+        "guid": "ca6d9b22-a167-4d3f-aaa2-5975023d2738",
+        "isActive": false,
+        "balance": "$2,019.91",
+        "picture": "http://placehold.it/32x32",
+        "age": 33,
+        "eyeColor": "brown",
+        "name": "Shepherd Tyson",
+        "gender": "male",
+        "company": "ENTHAZE",
+        "email": "shepherdtyson@enthaze.com",
+        "phone": "+1 (964) 424-3850"
+      }
+    ],
+    "others": "Other Values"
+  },
+  {
+    "_id": [
+      {
+        "index": 1,
+        "guid": "b7ecfce5-1df5-4e0c-a12a-69565e52f016",
+        "isActive": false,
+        "balance": "$1,356.16",
+        "picture": "http://placehold.it/32x32",
+        "age": 23,
+        "eyeColor": "blue",
+        "name": "Frank Kirk",
+        "gender": "male",
+        "company": "TECHMANIA",
+        "email": "frankkirk@techmania.com",
+        "phone": "+1 (893) 486-3665"
+      }
+    ],
+    "others": "Other Values"
+  }
+]

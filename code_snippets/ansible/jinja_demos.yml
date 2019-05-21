@@ -1,0 +1,18 @@
+- name: Mutiple Demos on Iteration
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars:
+    default_arg: "{% if type=='amd' %}This is AMD{% elif type=='intel' %}This is Intel {% else %}Some Other{% endif %}"
+    hosts_file: "/etc/hosts"
+  tasks:
+  - name: Get the Arg
+    debug: msg="{{ default_arg }}"
+
+  - name: Jinja to Substitue Varibles
+    shell: cat "{{ hosts_file }}"
+    register: cmd_out
+
+  - name: Display Hosts
+    debug: msg={{ cmd_out.stdout_lines }}

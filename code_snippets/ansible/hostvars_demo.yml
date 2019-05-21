@@ -1,0 +1,24 @@
+# Author: Veerendra Kakumanu
+# Description: Access variable of one PLAY in another PLAY in same playbook
+# More Info: https://stackoverflow.com/questions/55903007/access-variable-in-other-play-ansible
+---
+- name: A 'PLAY' to run shell commands in hosts
+  hosts: web_servers
+  gather_facts: false
+  become: false
+  tasks:
+  - name: Running hostname commands
+    shell: hostname -s
+    resgister: hostname_output
+
+- name: Another 'PLAY' to access the var
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  tasks:
+  - name: Access the "web_servers" register variables
+    debug: var="This is {{ item }}'s variable -> {{ hostvars[item].hostname_output.stdout }}"
+    with_items: "{{ groups['web_servers'] }}"
+

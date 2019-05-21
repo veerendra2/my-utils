@@ -1,0 +1,59 @@
+# Author: Veerendra Kakumanu
+# Description: Access vars from file and vars section
+---
+- name: Mutiple Demos on Iteration
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  vars_files:
+    vars.yml
+  vars:
+    mysqld_parms:
+      innodb_additional_mem_pool_size: 205
+      innodb_buffer_pool_size: 34
+      innodb_flush_log_at_trx_commit: 1
+
+    nova_parms:
+      max_concurrent_builds: 899
+
+  tasks:
+  - name: Access a var
+    debug: var="{{ mysqld_parms }}"
+
+  - name: Access a var from var file
+    debug: var="{{ hostname }}"
+
+  - name: Iterate on Dicts..Get Key and Value
+    debug: msg="KEY=> {{ item.key }}...VALUE=> {{ item.value }}"
+    loop: "{{ lookup('dict', mysqld_parms) }}"
+
+  - name: Iterate on Dict which has on a Item
+    debug: msg="KEY=> {{ item.key }}...VALUE=> {{ item.value }}"
+    loop: "{{ lookup('dict', nova_parms, wantlist=True) }}"
+
+  - set_fact:
+      my_var1: '[{ "Enabled": "false" }, { "id": 1 }]'
+      my_var2: '[{ "Enabled": "true" }, { "id": 2 }, { "Version": 0.2 }]'
+
+  - name: Iterating on Multiple List with with_nested(Cartian Product)
+    debug: msg="This is my_var1 Items-> {{ item[0] }}, and this is my_var2 Item-> {{ item[1] }}"
+    with_nested:
+      - "{{ my_var1 }}"
+      - "{{ my_var2 }}"
+
+  - name: Loading JSON File
+    set_fact:
+      json_con: "{{ lookup('file', 'dummy_json_file.json') | from_json }}"
+
+  - name: Get the sub elements from JSON Array
+    debug: msg="{{ item.1.balance }}"
+    with_subelements:
+      - "{{ json_con }}"
+      - _id
+    loop_control:
+      label: "{{ item.1.name }}"
+
+  - name: Iterating on Shell Command Output's Lines
+    debug: msg="{{ item }}"
+    with_lines: w | tail -n+3 | awk '{print $1}'
