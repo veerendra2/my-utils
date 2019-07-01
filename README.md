@@ -1,3 +1,4 @@
+![GitHub stars](https://img.shields.io/github/stars/veerendra2/useless-scripts.svg?style=for-the-badge)
 # scripts, tools, code snippets, tips and tricks 
 
 #### Repo Website - https://veerendra2.github.io/useless-scripts/
