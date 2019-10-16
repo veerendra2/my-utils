@@ -9,7 +9,7 @@ A repository where I put my tools, code snippets and scripts
 | [`code_snippets`](https://github.com/veerendra2/my-utils/tree/master/code_snippets) Directory  | Python, Shell and Anisble code snippets |
 | [`scripts`](https://github.com/veerendra2/my-utils/tree/master/scripts) Directory  | My automated scripts to install stuff |
 | [`tools`](https://github.com/veerendra2/my-utils/tree/master/tools) Directory  | My custom CLI tools written in Python |
-| [`vargrant`](https://github.com/veerendra2/my-utils/master/vagrant) Directory  | Vagrantfiles |
+| [`vargrant`](https://github.com/veerendra2/my-utils/tree/master/vagrant) Directory  | Vagrantfiles |
 | [Wiki Pages](https://github.com/veerendra2/my-utils/wiki)  | Tips & Tricks |
 
 #### Kubernetes & Docker Utils - https://github.com/veerendra2/my-k8s-applications

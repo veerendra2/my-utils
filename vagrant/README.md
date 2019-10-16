@@ -1,6 +1,9 @@
 # Vagrantfile
 A `Vagrantfile` to spawn VMs quickly:zap: to test things.
 
+#### Get it
+`curl -O https://raw.githubusercontent.com/veerendra2/my-utils/master/vagrant/Vagrantfile`
+
 ## Install Vagrant
 ```
 $ sudo apt update
@@ -20,7 +23,7 @@ Variables in `Vagrantfile`
 $ vagrant up
 
 # SSH into VM, matrix1, matrix2....
-$ vagrant ssh metrix1
+$ vagrant ssh matrix1
 
 # Destroy
 # vagrant destroy -f
