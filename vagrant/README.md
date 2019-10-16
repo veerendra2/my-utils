@@ -1,5 +1,5 @@
 # Vagrantfile
-A `Vagrantfile` to spawn VMs quickly:zap: to test things.
+A `Vagrantfile` to spawn VMs quickly:zap: to test things. Browse vagrant boxes [here](https://app.vagrantup.com/boxes/search)
 
 #### Get it
 `curl -O https://raw.githubusercontent.com/veerendra2/my-utils/master/vagrant/Vagrantfile`
@@ -29,3 +29,7 @@ $ vagrant ssh matrix1
 # vagrant destroy -f
 
 ```
+
+## Links
+* http://www.thisprogrammingthing.com/2015/multiple-vagrant-vms-in-one-vagrantfile/
+* https://everythingshouldbevirtual.com/virtualization/vagrant-complex-vagrantfile-configurations/
