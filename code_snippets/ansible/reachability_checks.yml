@@ -1,0 +1,44 @@
+- name: Reachability Check For Target Node
+  hosts: node1
+  gather_facts: false
+
+  tasks:
+
+  - block:
+      - name: Determine host is up
+        wait_for_connection:
+          timeout: 5
+        vars:
+          ansible_connection: ssh
+
+      - name: Continue Playbook
+        debug: msg="Do stuff here, if reachable"
+
+    rescue:
+      - debug: msg="Cannot connect to node"
+
+- name: Reachability Checks From List or Varaible
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    ip:
+      - 192.169.1.1
+      - 192.168.1.1
+
+  - block:
+      - name: Checking the reachability to controller nodes
+        wait_for: host={{ item }} port=80 timeout=1
+        register: output
+        with_items: "{{ ip }}"
+
+    rescue:
+      - debug: msg="Checking reachability completed."
+
+  - name: Picking an available node
+    set_fact:
+      controller: "{{ item }}"
+    when: "item.failed == 'false'"
+    with_items: "{{ output.results }}"
+
