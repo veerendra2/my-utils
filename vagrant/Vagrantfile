@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
         v.memory = RAM_MB
         v.cpus = CORE_COUNT
       end
+      server.vm.network "private_network", ip: "192.168.99.#{i+10}"
 
-      # server.vm.network :private_network, ip: "192.168.56.101"
       # server.vm.network :forwarded_port, guest: 22, host: 10122
       # server.vm.synced_folder "../data", "/vagrant_data"
       # server.vm.provision "shell", path: "script_on_host.sh"
