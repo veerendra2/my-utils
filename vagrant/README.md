@@ -9,7 +9,12 @@ A `Vagrantfile` to spawn VMs quickly:zap: to test things. Browse vagrant boxes [
 $ sudo apt update
 $ sudo apt install virtualbox vagrant -y
 ```
+#### `scp` plugin
+```
+$ vagrant plugin install vagrant-scp
 
+###vagrant scp <some_local_file_or_dir> [vm_name]:<somewhere_on_the_vm>
+```
 ## Configuration variables in `Vagrantfile`
 1. Box type
 2. Node count
