@@ -8,7 +8,7 @@ sudo ubuntu-drivers autoinstall
 echo "[*] Installing CUDA"
 sudo apt-get install nvidia-cuda-* -y
 echo "[*] Installing Dependencies"
-sudo apt-get install build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev ethtool shtool rfkill zlib1g-dev libpcap-dev libsqlite3-dev libpcre3-dev libhwloc-dev libcmocka-dev -y
+sudo apt-get install p7zip-full build-essential autoconf automake libtool pkg-config libnl-3-dev libnl-genl-3-dev libssl-dev ethtool shtool rfkill zlib1g-dev libpcap-dev libsqlite3-dev libpcre3-dev libhwloc-dev libcmocka-dev -y
 download=`curl -s https://api.github.com/repos/aircrack-ng/aircrack-ng/releases/latest | grep tarball_url | cut -d '"' -f 4`
 echo "[*] Downloading aircrack-ng latest version $version"
 wget -q --show-progress $download -O aircrack_latest.tar
