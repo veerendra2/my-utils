@@ -1,0 +1,13 @@
+staging:
+  hosts:
+    staging:
+      ansible_ssh_port: 22
+      ansible_ssh_host:
+      ansible_ssh_user: user
+      ansible_ssh_password: 123
+      ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+      extra_hosts:
+        - "example.com.local:192.168.0.2"
+  vars:
+    jumphost:
+    jumphost_username: user

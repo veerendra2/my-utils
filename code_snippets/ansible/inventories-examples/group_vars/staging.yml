@@ -1,0 +1,13 @@
+# Staging Hosts Vars
+
+db_username:
+db_password:
+db_name:
+db_host: "/tmp" # Socket file location
+addons_path: ""
+odoo_admin_password:
+pg_backup_src: /var/data/postgresql/12/main
+pg_backup_dest: /var/data # Should not end with '/'
+ansistrano_git_branch: master
+image_label: latest
+domain_name: ""

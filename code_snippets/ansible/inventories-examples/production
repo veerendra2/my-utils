@@ -1,0 +1,13 @@
+production:
+  hosts:
+    runner:
+      ansible_ssh_port: 22
+      ansible_ssh_host:
+      ansible_ssh_user: user
+      ansible_ssh_password: 123
+      ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q {{ jumphost_username }}@{{ jumphost }}" -o StrictHostKeyChecking=no'
+      extra_hosts:
+        - "example.com.com.local:192.168.0.3"
+  vars:
+    jumphost:
+    jumphost_username: user

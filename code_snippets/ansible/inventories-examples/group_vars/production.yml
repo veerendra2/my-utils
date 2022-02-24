@@ -1,0 +1,12 @@
+# Production hosts vars
+
+db_username:
+db_password:
+db_name: production
+db_host: "/tmp" # Socket file location
+addons_path: ""
+odoo_admin_password:
+pg_backup_src: /var/lib/postgresql/12/main
+pg_backup_dest: /var/data # Should not end with '/'
+ansistrano_git_branch: master
+domain_name:

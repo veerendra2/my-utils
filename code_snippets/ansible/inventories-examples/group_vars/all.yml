@@ -1,0 +1,9 @@
+ansistrano_git_repo:
+ansistrano_keep_releases: 5
+ansistrano_deploy_via: "git"
+ansistrano_deploy_to: /opt/runner
+ansistrano_allow_anonymous_stats: no
+pg_socket_con: yes
+docker_image:
+odoo_enterprise_version: 13.0
+#ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/deploy-hooks/nterprise.yml"
