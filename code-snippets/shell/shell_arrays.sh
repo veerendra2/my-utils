@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: Arrays in shell
 
 # 1 Dimentional Arrays Decloration

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: A simple tool to removes all docker containers and docker images
 
 sudo docker rm -f `docker ps -a | tail -n+2 | awk '{print $1}'`

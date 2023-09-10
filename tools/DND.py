@@ -1,6 +1,6 @@
 #!/usr/bin/envn python
 '''
-Author: Veerendra Kakumanu
+Author: Veerendra K
 Description: Simple Do Not Distrube(DND) script, tempararly blocks the specified site in localhost.
 NOTE: Restart broswer to get chages
 '''
@@ -31,7 +31,7 @@ def dndON():
                 f.write("127.0.0.1\t{}\n".format(site))
                 f.write("::1\t{}\n".format(site))
     print "DND [ON] *Please restart the browser to see the effect"
-    
+
 def dndOFF():
     final_content=list()
     with open(host_file,"a+") as f:
@@ -45,7 +45,7 @@ def dndOFF():
         f.truncate()
         f.writelines(final_content)
     print "DND [ON] *Please restart the browser to see the effect"
-        
+
 if __name__=='__main__':
     if not os.geteuid()==0:
         print "Please run the script as sudo"

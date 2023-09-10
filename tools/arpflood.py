@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.K
+Author: Veerendra K
 Description: A simple ARP packets flooding script
 '''
 from scapy.all import *

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Author : Veerendra Kakumanu
+Author : Veerendra K
 Description : Ultimate function for execute shell commands in python
 """
 import subprocess

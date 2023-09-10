@@ -1,4 +1,4 @@
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: Access variable of one PLAY in another PLAY in same playbook
 # More Info: https://stackoverflow.com/questions/55903007/access-variable-in-other-play-ansible
 ---

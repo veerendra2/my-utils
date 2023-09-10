@@ -1,5 +1,5 @@
 '''
-Author: Veerendra Kakumanu
+Author: Veerendra K
 Description: Pings to specified servers with multi threading
 '''
 import threading

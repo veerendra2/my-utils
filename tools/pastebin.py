@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 '''
-Author : Veerendra Kakumanu
+Author : Veerendra K
 Description : Sends data to pastebin.com
 Docs : https://pastebin.com/api
 '''
@@ -15,7 +15,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 API_URL = "https://pastebin.com/api/api_post.php"
-API_KEY = "cf4b23ac9420f095e539789bc5b2185e"
+API_KEY = ""
 
 if not API_KEY:
     print "[!] Missing API key. Get API key from your account(https://pastebin.com/api#1) and specify in code"

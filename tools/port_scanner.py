@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.K
+Author: Veerendra K
 Description: nmap like utility, which gets open ports in localhost
 '''
 import socket

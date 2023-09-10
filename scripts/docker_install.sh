@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: A simple tool to install docker package
 sudo apt update
 sudo apt install \

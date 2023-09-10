@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 '''
-Author: Veerendra Kakumanu
+Author: Veerendra K
 Description: Wipes commands history in terminal for every user including root. Requires sudo
 '''
 import os

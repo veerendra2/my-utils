@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.K
+Author: Veerendra K
 Description: An example snippet code which pushes the metrics OpenTSDB by HTTP REST API
 
-Refer: http://opentsdb.net/docs/build/html/api_http/index.html 
+Refer: http://opentsdb.net/docs/build/html/api_http/index.html
 Know how to setup HTTPS proxy for this: https://networkhop.wordpress.com/2017/02/28/how-to-create-https-proxy-in-apache/#more-868
 '''
 import os

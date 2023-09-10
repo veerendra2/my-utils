@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: Installs Nvidia drivers, CUDA, hashcat and aircrack-ng tool
 
 sudo apt-get update && sudo apt-get install ubuntu-drivers-common -y

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Author : Veerendra Kakumanu
+Author : Veerendra K
 Description : Simple yaml file reader and writer
 """
 import os

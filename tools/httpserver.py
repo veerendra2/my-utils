@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 '''
-Author : Veerendra Kakumanu
+Author : Veerendra K
 Description : Simple HTTP Server
 '''
 from SimpleHTTPServer import SimpleHTTPRequestHandler

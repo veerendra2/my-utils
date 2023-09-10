@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerndra.K
+Author: Veerndra K
 Description: A simple example snippet, sends metrics to OpenTSDB
 Requried Modules: potsdb (pip install potsdb)
 '''

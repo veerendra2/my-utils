@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.K
+Author: Veerendra K
 Description: An example 'Busy Cursor' snippet
 '''
 import sys

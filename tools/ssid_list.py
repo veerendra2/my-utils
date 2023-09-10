@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Author: Veerendra. Kakumanu
+Author: Veerendra K
 Description: Displays near wifi hotspots
 """
 import subprocess

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra. Kakumanu
+Author: Veerendra K
 Description: An automated DNSCrypt Proxy creator using 'dnscrypt-proxy'
 
 Required Packages: dnscrypt-proxy
@@ -60,7 +60,7 @@ def check_dnscrypt():
     if ret_status!=0:
         print Colors.FAIL+"'dnscrypt-proxy' not found. Please install\n"+Colors.ENDC
         exit(2)
-    
+
 if __name__=="__main__":
     check_dnscrypt()
     parser = argparse.ArgumentParser(description='dnscrypt-auto')

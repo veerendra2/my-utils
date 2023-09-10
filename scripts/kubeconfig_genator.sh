@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: Generates kubeconfig file for service account
 
 SERVICE_ACCOUNT=$1

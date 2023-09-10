@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.Kakumanu
+Author: Veerendra K
 Description: A simple logger snippet, usefull to log info to log file. Just paste the code and call 'log_it()' with arguments 'level' & 'info'
 '''
 import logging

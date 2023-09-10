@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author : Veerendra Kakumanu
+Author : Veerendra K
 Description : Sends "pushbullet" notification to Device / Channel
 Docs : https://docs.pushbullet.com/
 '''
@@ -12,9 +12,9 @@ def send_notification(title, body, channel=False):
     import random
     personal_greetings = ["Sir, ", "Boss, ", "Mr. Veerendra, "]
     crowed_greetings = ["Ok People", "Hello there"]
-    api_key = "o.Wp7IYNaO0ftCGRNplyAA5juwRQKGLQ7a"
+    api_key = ""
     push_api = "https://api.pushbullet.com/v2/pushes"
-    my_device_id = "ujv5wTYow0asjAw1gZVXy0"
+    my_device_id = ""
     body = body + "\n\nThanks\nYour Bot"
     if channel:
         title = random.choice(crowed_greetings) + "It is regarding " + title + "\nThanks\nYour Bot"

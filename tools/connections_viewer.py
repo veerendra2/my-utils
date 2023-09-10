@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra.K
+Author: Veerendra K
 Description: 'netstat' like tool. Retrieves connection details of pid. Reads info from /proc/net/tcp/ /proc/[pid]/fd/
 '''
 import os

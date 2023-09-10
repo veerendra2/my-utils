@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
-Author: Veerendra. Kakumanu
-Description: Simple "Domain Tools" script: Displays specified host info, your ISP info 
+Author: Veerendra K
+Description: Simple "Domain Tools" script: Displays specified host info, your ISP info
 '''
 import json
 import urllib2
