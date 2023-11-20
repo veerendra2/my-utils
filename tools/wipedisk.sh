@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Author : Veeredra Kakumanu
+# Author : Veeredra K
 # Description : Fills zeros in empty spaces
 # Reference : https://superuser.com/questions/19326/how-to-wipe-free-disk-space-in-linux
 # Similar Tools : zerofree, secure-delete, shred

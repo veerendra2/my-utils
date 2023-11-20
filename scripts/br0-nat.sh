@@ -1,5 +1,5 @@
 #!/bin/bash
-# Author: Veerendra Kakumanu
+# Author: Veerendra K
 # Description: Create br0 bridge, configures NAT rules on it. Usefull when VM are connected to br0 bridge
 
 

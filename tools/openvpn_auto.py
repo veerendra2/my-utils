@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 '''
-Author: Veerendra Kakumanu
+Author: Veerendra K
 Description: A simple automated script to septup VPN with "openvpn"
 '''
 import subprocess
