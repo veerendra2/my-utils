@@ -1,5 +1,4 @@
 '''
-Author: OpsMx
 Description:
 1) Gets the cummulative packet and byte count on open TCP ports
 2) Gets the actives connections/ connected peers
